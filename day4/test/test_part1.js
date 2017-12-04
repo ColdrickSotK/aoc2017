@@ -6,7 +6,8 @@ describe('Part1', function() {
     const tests = [
       {input: 'aa bb cc dd ee', expected: true},
       {input: 'aa bb cc dd aa', expected: false},
-      {input: 'aa bb cc dd aaa', expected: true}
+      {input: 'aa bb cc dd aaa', expected: true},
+      {input: 'xyz zxy aa', expected: false}
     ];
     tests.forEach(function(test) {
       it(`should return ${test.expected} when the phrase is ${test.input}`, function() {

@@ -7,11 +7,16 @@ function isValid(phrase) {
   words.forEach(word => {
     if (seen.indexOf(word) != -1) {
       result = false;
-      return
+      return;
     }
     words.forEach(other => {
-      if (word.length != other.length) {
-        return
+      if (word === other) {
+        return;
+      }
+      let sortedWord = word.split('').sort().join('');
+      let sortedOther = other.split('').sort().join('');
+      if (sortedWord === sortedOther) {
+        result = false;
       }
     });
     seen.push(word);
